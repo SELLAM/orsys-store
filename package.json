@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SELLAM/rstore.git"
+    "url": "git+https://github.com/SELLAM/orsys-store.git"
   },
   "keywords": [
     "store",
@@ -20,9 +20,9 @@
   "author": "sellam mhammad & hamza hachimi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SELLAM/rstore/issues"
+    "url": "https://github.com/SELLAM/orsys-store/issues"
   },
-  "homepage": "https://github.com/SELLAM/rstore#readme",
+  "homepage": "https://github.com/SELLAM/orsys-store#readme",
   "dependencies": {
     "lodash": "^4.17.15"
   }

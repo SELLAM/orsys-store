@@ -1,6 +1,6 @@
 import * as _ from 'lodash';
 
-function Store() {
+export function Store() {
     data = {};
     subscribers = {};
 

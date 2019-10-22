@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 
-export class RStore {
+export class Store {
   data: Object;
   subscribers: Object;
   // options: any;

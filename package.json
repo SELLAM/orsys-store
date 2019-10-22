@@ -1,5 +1,5 @@
 {
-  "name": "rstore",
+  "name": "orsys-store",
   "version": "1.0.0",
   "description": "Reactive store",
   "main": "index.ts",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/SELLAM/rstore/issues"
   },
-  "homepage": "https://github.com/SELLAM/rstore#readme"
+  "homepage": "https://github.com/SELLAM/rstore#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
 }

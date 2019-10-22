@@ -1,0 +1,26 @@
+{
+  "name": "rstore",
+  "version": "1.0.0",
+  "description": "Reactive store",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SELLAM/rstore.git"
+  },
+  "keywords": [
+    "store",
+    "reactive",
+    "store",
+    "react",
+    "angular"
+  ],
+  "author": "sellam mhammad & hamza hachimi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SELLAM/rstore/issues"
+  },
+  "homepage": "https://github.com/SELLAM/rstore#readme"
+}

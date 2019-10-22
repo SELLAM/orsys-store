@@ -1,8 +1,8 @@
 {
   "name": "orsys-store",
   "version": "1.0.0",
-  "description": "Reactive store",
-  "main": "index.ts",
+  "description": "Reactive Store",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,13 +11,10 @@
     "url": "git+https://github.com/SELLAM/orsys-store.git"
   },
   "keywords": [
-    "store",
-    "reactive",
-    "store",
-    "react",
-    "angular"
+    "Store",
+    "orsys"
   ],
-  "author": "sellam mhammad & hamza hachimi",
+  "author": "Sellam Mhammad",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/SELLAM/orsys-store/issues"

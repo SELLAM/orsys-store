@@ -1,8 +1,8 @@
 import * as _ from 'lodash';
 
 export function Store() {
-    data = {};
-    subscribers = {};
+    const data = {};
+    const subscribers = {};
 
     /**
      *
@@ -44,9 +44,9 @@ export function Store() {
      * @newValue path
      * @currentValue path
      */
-    function notifySubscribers(path, newValue, currentValue) {
+    function notifySubscribers(path, newValue, oldValue) {
         _.forEach(subscribers[path], listener => {
-            if (listener) listener(newValue, currentValue);
+            if (listener) listener(newValue, oldValue);
         });
     }
 

@@ -1,6 +1,6 @@
 {
   "name": "orsys-store",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Reactive Store",
   "main": "index.js",
   "scripts": {

@@ -38,12 +38,6 @@ export function Store() {
 
         _.set(data, path, newValue);
 
-        _.chain(path)
-            .split(".")
-            .forEach(key => {
-                notifySubscribers(key, newValue, currentValue);
-            });
-
         notifySubscribers(path, newValue, currentValue);
     }
 
@@ -55,9 +49,18 @@ export function Store() {
      * @currentValue path
      */
     function notifySubscribers(path, newValue, oldValue) {
-        _.forEach(subscribers[path], listener => {
-            if (listener) listener(newValue, oldValue);
-        });
+
+        const keys = _.split(path, ".");
+
+        while (keys.length) {
+            const path = _.join(keys, ".");
+            _.forEach(subscribers[path], l => l && l(newValue, oldValue));
+            keys.pop();
+        }
+
+        // _.forEach(subscribers[path], listener => {
+        //     if (listener) listener(newValue, oldValue);
+        // });
     }
 
     /**

@@ -8,10 +8,20 @@ export function Store() {
      *
      * @description Get the value from data by path
      * @param path
-     * @param defaultValue
+     * @param defaultValue 
      */
-    function get(path, defaultValue) {
+    function get(path, defaultValue = null) {
         return _.result(data, path, defaultValue);
+    }
+
+    /**
+     *
+     * @description Get the clonned value from data by path
+     * @param path
+     * @param defaultValue 
+     */
+    function getClone(path, defaultValue = null) {
+        return _.cloneDeep(this.get(path, defaultValue));
     }
 
     /**
@@ -81,6 +91,7 @@ export function Store() {
 
     return {
         get,
+        getClone,
         set,
         subscribe,
         notifySubscribers

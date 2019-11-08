@@ -32,7 +32,7 @@ export function Store() {
      */
     function set(path, newValue) {
         //added to minimize rendering
-        let currentValue = _.clone(get(path));
+        let currentValue = getClone(path);
 
         if (_.isEqual(currentValue, newValue)) return;
 

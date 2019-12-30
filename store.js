@@ -16,12 +16,23 @@ export function Store() {
 
     /**
      *
+     * @description Get the value from data by path
+     * @param namespace
+     * @param path
+     * @param defaultValue 
+     */
+    function getWithNamespace(namespace, path, defaultValue = null) {
+        return _.result(data, namespace + '.' + path, defaultValue);
+    }
+
+    /**
+     *
      * @description Get the clonned value from data by path
      * @param path
      * @param defaultValue 
      */
     function getClone(path, defaultValue = null) {
-        return _.cloneDeep(this.get(path, defaultValue));
+        return _.cloneDeep(get(path, defaultValue));
     }
 
     /**
@@ -43,6 +54,17 @@ export function Store() {
 
     /**
      *
+     * @description set with namespace
+     * @param namespace
+     * @param path 
+     * @param value 
+     */
+    function setWithNamespace(namespace, path, value) {
+        set(namespace + '.' + path, value)
+    }
+
+    /**
+     *
      * @description Send notification to all listners
      * @param path
      * @newValue path
@@ -53,14 +75,10 @@ export function Store() {
         const keys = _.split(path, ".");
 
         while (keys.length) {
-            const path = _.join(keys, ".");
-            _.forEach(subscribers[path], l => l && l(newValue, oldValue));
+            const p = _.join(keys, ".");
+            _.forEach(subscribers[p], l => l && l(newValue, oldValue, p, path));
             keys.pop();
         }
-
-        // _.forEach(subscribers[path], listener => {
-        //     if (listener) listener(newValue, oldValue);
-        // });
     }
 
     /**
@@ -81,8 +99,6 @@ export function Store() {
             notifySubscribers(path, get[path], null);
         });
 
-        // const unsubscribe = ;
-
         return {
             unsubscribe: () => {
                 listnerIndexes.forEach(([key, index]) => {
@@ -92,12 +108,24 @@ export function Store() {
         };
     }
 
+    function getData() {
+        return data
+    }
+
+    function getSubscribers() {
+        return subscribers
+    }
+
     return {
         get,
         getClone,
+        getData,
         set,
         subscribe,
-        notifySubscribers
+        notifySubscribers,
+        getSubscribers,
+        getWithNamespace,
+        setWithNamespace
     }
 }
 
